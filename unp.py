@@ -288,6 +288,15 @@ class TarBz2Unpacker(Unpacker):
 
 
 @register_unpacker
+class TarXzUnpacker(Unpacker):
+    name = 'XZ Compressed Tarballs'
+    filename_patterns = ['*.tar.xz']
+    executable = 'tar'
+    args = ['xvJf', FILENAME]
+    stream_processor = tar_stream_processor
+
+
+@register_unpacker
 class GzipUnpacker(SingleInplaceUnpacker):
     name = 'Gzip Compressed Files'
     filename_patterns = ['*.gz']
