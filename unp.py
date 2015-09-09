@@ -416,7 +416,7 @@ class CabUnpacker(Unpacker):
 class ArUnpacker(Unpacker):
     id = 'ar'
     name = 'AR Archives'
-    filename_patterns = ['*.a']
+    filename_patterns = ['*.a', '*.deb']
     executable = 'ar'
     args = ['-vx', FILENAME]
     mimetypes = ['application/x-archive']
